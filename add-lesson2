@@ -1,0 +1,37 @@
+ 
+                 <div class="row-fluid">
+                     <div class="span12">
+                        <!-- block -->
+                        <div class="block">
+                            <div class="navbar navbar-inner block-header">
+                                <div class="muted pull-left">Add Category</div>
+                            </div>
+                            <div class="block-content collapse in">
+                             <form method="POST" action="add-function.php">
+                                <label>Title</label>
+                                <input type="text" class="form-control" name="title"placeholder="e.g. Sample"required>
+                                <label>Content</label>
+                               
+                        
+                            <!-- block -->
+                     
+                             <div class="block-content collapse in">
+                                   <textarea id="ckeditor_full" name="content"></textarea>
+                                </div>
+                            <!-- /block -->
+                    
+
+                                    <label>Category</label>
+                                    <select class="form-control" name="category">
+                                        <option></option>
+                                        <?php include "function.php"; category(); ?>
+                                    </select>
+                                        <br>
+                                        <input type="submit" class="btn btn-primary" value="Publish">
+                                    </form>
+                                                  
+                            </div>
+                            </div>
+                        </div>
+                        <!-- /block -->
+                    </div>

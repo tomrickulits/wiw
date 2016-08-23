@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 23, 2016 at 02:39 AM
+-- Generation Time: Aug 23, 2016 at 04:57 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -59,7 +59,9 @@ CREATE TABLE `lesson` (
 
 INSERT INTO `lesson` (`LES_ID`, `LES_TITLE`, `LES_CONTENT`, `OPEN_SUB_ID`) VALUES
 (69, 'hahaha', 'asdasdasdasdasdasdasdasd', 666),
-(96, 'BOOO', '123123123123123123\r\n123123123123123123\r\n123123123123123123123123123', 661);
+(97, 'asd', '<ul><li>eqw</li></ul>', 661),
+(99, 'wppowetqweqweqtqwt', '<b>qweqwt<u>qweqweqwr</u></b><div><b><u><font size="5">qweqweqweqw</font></u></b></div>', 661),
+(103, '3123125', 'gqqgqwgwqhqwhhqw', 661);
 
 -- --------------------------------------------------------
 
@@ -283,7 +285,7 @@ ALTER TABLE `enroll_list`
 -- AUTO_INCREMENT for table `lesson`
 --
 ALTER TABLE `lesson`
-  MODIFY `LES_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
+  MODIFY `LES_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
 --
 -- AUTO_INCREMENT for table `open_subjects`
 --

@@ -13,8 +13,8 @@ while($row=$run_less->fetch_array())
     echo "<td>".$row['LES_TITLE']."</td>";
      echo "<td>".
     '
-    <a href="edit-sub.php?sub_Id='.$row["OPEN_SUB_ID"].'"><button>Edit<i class="icon-plus icon-white"></i></button</a>
-    <a href="#"sub_Id="'.$row['OPEN_SUB_ID'].'"><button>Delete<i class="icon-plus icon-white"></i></button</a>
+    <a href="edit-lesson.php?lid='.$row["LES_ID"].'"><button>Edit<i class="icon-plus icon-white"></i></button</a>
+    <a href="delete-lesson.php?lid='.$row["LES_ID"].'&osi='.$row["OPEN_SUB_ID"].'"><button>Delete<i class="icon-plus icon-white"></i></button</a>
     </div>'
             ."</td>";
 

@@ -1,25 +1,31 @@
 <?php
 include 'functions/connect.php';
 
-    $SID=$_GET['SUB_ID'];
-    $sel_user ="select * from subject where SUB_ID='$SID'";
-    $run_user =mysqli_query($con,$sel_user);
-    $check_user = mysqli_num_rows($run_user);
-
-    while($row = $run_user->fetch_array())
+    $OSID=$_GET['OSUB_ID'];
+    $sel_osub="select * from open_subjects where OPEN_SUB_ID='$OSID'";
+    $run_osub=mysqli_query($con,$sel_osub);
+    while($osubrow=$run_osub->fetch_array())
+    {
+        $subid=$osubrow['SUB_ID'];
+        
+        $sel_sub="select * from subject where SUB_ID='$subid'";
+        $run_sub=mysqli_query($con,$sel_sub);
+        while($subrow=$run_sub->fetch_array())
         {
-            $title=$row['SUB_NAME'];
-            $content=$row['SUB_TEXT'];
-            $sel_lessons="select * from lesson where SUB_ID='$SID'";
-            $run_lessons=mysqli_query($con,$sel_lessons);
+            $subname=$subrow['SUB_NAME'];
+            echo "<h1>$subname</h1>";
             
-    echo "<h1>$title</h1>";
-            while($lesrow = $run_lessons->fetch_array())
+            $sel_les="select * from lesson where OPEN_SUB_ID='$OSID'";
+            $run_les=mysqli_query($con,$sel_les);
+            while($lesrow=$run_les->fetch_array())
             {
               $lesid=$lesrow['LES_ID'];
               $lestitle=$lesrow['LES_TITLE'];
               echo "<h2><a href='les-content.php?LES_ID=".$lesid."' >$lestitle</a></h2><br>";
+                
             }
         }
+        
+    }
 
 ?>

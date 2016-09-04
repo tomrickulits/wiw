@@ -8,6 +8,10 @@
                     {
                             echo $_SESSION['T_FNAME'];
                     }
+                    if (isset($_SESSION['A_ID']))
+                    {
+                            echo $_SESSION['A_FNAME'];
+                    }
                     else
                     {
                         echo 'something went wrong';

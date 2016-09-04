@@ -54,6 +54,10 @@ $check_user = mysqli_num_rows($run_user);
 $sel_teach ="select * from teachers where T_USER='$user' AND T_PASS='$pass'";
 $run_teach =mysqli_query($con,$sel_teach);
 $check_teach = mysqli_num_rows($run_teach);    
+    
+$sel_admin ="select * from administrators where A_USER='$user' AND A_PASS='$pass'";
+$run_admin =mysqli_query($con,$sel_admin);
+$check_admin = mysqli_num_rows($run_admin);    
 
     
 if($check_user>0)
@@ -83,6 +87,20 @@ else if($check_teach>0)
     $_SESSION['T_USER']=$user;
     $_SESSION['type']='teacher';
     header("Location:classes.php");
+}
+else if($check_admin>0)
+{
+    while($arow = $run_admin->fetch_array())
+  {
+      $_SESSION['A_USER']=$user;
+      $_SESSION['A_FNAME']=$arow['A_FNAME'];
+      $_SESSION['A_MNAME']=$arow['A_MNAME'];
+      $_SESSION['A_LNAME']=$arow['A_LNAME'];
+      $_SESSION['A_ID']=$arow['A_ID'];
+  }
+    $_SESSION['A_USER']=$user;
+    $_SESSION['type']='admin';
+    header("Location:admin.php");
 }
 else 
 {

@@ -22,8 +22,7 @@ include 'functions/connect.php';
                 while ($subject=$run_subj->fetch_array())
                 {
                     $title=$subject['SUB_NAME'];
-                    $subj_id=$subject['SUB_ID'];
-                    echo "<a href='subj-content.php?SUB_ID=".$subj_id."' class ='list-group-item'>$title</a><br>";
+                    echo "<a href='subj-content.php?OSUB_ID=".$subid."' class ='list-group-item'>$title</a><br>";
 
                 }
 
